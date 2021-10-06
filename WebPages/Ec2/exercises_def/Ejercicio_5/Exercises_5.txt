@@ -1,0 +1,17 @@
+1.- Abre el archivo index2.html, aqui los estilos se localizan en un archivo a
+ parte llamado
+hojas_estilos.css.
+
+2.-Observa los cambios y adecuaciones que brindan los parametros
+class (titulo, textonormal,
+tr1, tr2 y botones)
+
+3.- Responde la siguiente pregunta, porque los estilos deben estar a parte
+de la estrucutura y contenido.
+
+Separar el código permite un mejor manejo de éste, sobre todo
+en proyectos de buen tamaño y de complejidad considerable.
+Poniendo la estructura en un archivo y la apariencia en otro
+es mas fácil hacer un diseño escalable.
+
+by: MTI. Daniel Tellez
