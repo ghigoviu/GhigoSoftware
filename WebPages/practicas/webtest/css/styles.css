@@ -1,0 +1,95 @@
+:root{
+       --blanco: #FFFFFF;
+       --obscuro: #212121;
+       --primario: #ffc107;
+       --secundario:#0097a7;
+       --gris:#757575;
+
+       --tamano-fuente: 4.2rem;
+       --tamano-sub: 3.6rem;
+       --tamano-subh3: 2.4rem;
+}
+
+html{
+    font-size: 80%;
+    font-family: 'Marcellus SC', serif;
+}
+
+body{
+    font-size: 16px;
+}
+
+.titulo{
+   text-align: center;
+   color: var(--primario);
+   font-size: var(--tamano-fuente);
+}
+
+.titulo span{
+    font-size:3.5rem;
+    color: var(--secundario);
+
+}
+
+.subtitulo{
+    text-align: center;
+    color: var(--primario);
+    font-size: var(--tamano-sub);
+}
+
+.subh3{
+    text-align: center;
+    color: var(--obscuro);
+    font-size: var(--tamano-subh3);
+}
+
+.svg{
+    text-align: center;
+}
+
+.nav-bg{
+       background: var(--secundario);
+       text-align: center;
+}
+
+.navegacion{
+/*margin-top: 10rem;
+padding: 1rem;*/
+display:flex;
+justify-content: space-around;
+
+}
+
+.navegacion a{
+    /*background: var(--primario);*/
+    display: inline;
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 5px;
+   /* display: block;*/
+}
+
+p{
+  color: var(--primario);
+  /*background: var(--primario); */
+}
+
+.contenedor{
+/*width: 120rem;
+margin-top: 0px;
+margin-right:auto;
+margin-bottom: 0;
+margin-left: auto;*/
+/*margin: 0 auto 0 auto;
+*/
+margin: 0 auto;
+padding: 0.5rem;
+}
+
+.web{
+  background-image: url(../img/pweb.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+
+}

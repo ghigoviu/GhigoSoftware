@@ -1,0 +1,30 @@
+:root{
+  font-family: Arial;
+  margin-top: 0px;
+}
+
+header{
+  padding-bottom: 10px;
+  background: #c80404;
+  text-align: center;
+  font-family: Arial;
+  color: white;
+}
+
+#Materiales mark{
+  color: white;
+  background  : #811919;
+}
+
+.img-right {
+  width: auto;
+  float: right;
+  position: relative;
+}
+
+.img-right img{
+  width: 100%;
+  height: 350px;
+  align-self: flex-start;
+
+}
