@@ -1,0 +1,34 @@
+:root{
+  font-family: Arial;
+  font-size: 1.5em;
+  margin-top: 0px;
+}
+
+header{
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: Arial;
+  color: #e28743;
+}
+
+#Materiales mark{
+  background  : #FFFB20;
+}
+
+#Explicacion mark{
+  background  : #FFFB20;
+}
+
+.img-right {
+  width: auto;
+  float: right;
+  position: relative ;
+}
+
+.img-right img{
+  width: 100%;
+  height: 200px;
+  align-self: flex-start;
+  padding-right: 20px;
+
+}
