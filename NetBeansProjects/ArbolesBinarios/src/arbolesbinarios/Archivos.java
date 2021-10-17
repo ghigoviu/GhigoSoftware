@@ -143,8 +143,10 @@ public class Archivos {
         ArbolBinario listaNodos;
         int c;
         int numNodos = 0;
-        int lineas = 1;
+        int lineas = 0;
         String adyacencias[][];
+        String numero;
+        char digito;
         try (PushbackReader nuevo = new PushbackReader(new FileReader(ruta))) {
             listaNodos = new ArbolBinario();
             while((c = nuevo.read()) != -1){
@@ -174,52 +176,62 @@ public class Archivos {
                     numNodos++;
                 }
                 else if(c == ';'){
-                    System.out.println("Empieza else if");
-                    lineas++;
                     //Según el número de nodos, crear un array int[n][n].
                     //Almacenar en cada fila los valores obtenidos, omitiendo las comas.
                     //Imprimir matriz para probar.
                     adyacencias = new String[numNodos][numNodos];
                     int j;
                     //Leer matriz
+                    c = nuevo.read();
                     for (int i = 0; i < numNodos; i++) {
-                        c = nuevo.read();
+                        j = 0;
                         //Leer línea
                         do{
                             c = nuevo.read();
                             if(((c>=48)&&(c<=57))){
                                 //Leer numero
+                                numero = "";
                                 while(c > 44){
-                                    System.out.print("" + (c-48));
+                                    //System.out.print("" + (c-48));
+                                    digito = (char)c;
+                                    numero += Character.toString(digito);
                                     c = nuevo.read();
                                 }
+                                System.out.print(numero + " ");
+                                adyacencias[i][j++] = numero;
                                 System.out.print(", ");
                             } else if(c == -1)
                                 break;
                         }while((c!=10));
-                        System.out.println("Sig línea: " + ++lineas);       
+                        System.out.println("Sig línea: " + ++lineas + " " + i);       
+                    }   
+                    switch (c) {
+                        case '0':
+                            System.out.println("Caso 0: " + c);
+                            break;
+                        case 49:
+                        case '9':
+                            System.out.println("Caso del 1 al nueve: " + c);
+                            break;
+                        case ',':
+                            System.out.println("Caso comma " + c);
+                            break;
+                        case '\n':
+                            System.out.print("Caso salto de línea " );
+                            System.out.println(". Linea " + lineas);
+                            break;
+                        case ';':
+                            System.out.println("Caso ';' " + c);
+                            break;
+                        default:
+                            System.out.println("Otra cosa: " + c);
                     }
-                        switch (c) {
-                            case '0':
-                                System.out.println("Caso 0: " + c);
-                                break;
-                            case 49:
-                            case '9':
-                                System.out.println("Caso del 1 al nueve: " + c);
-                                break;
-                            case ',':
-                                System.out.println("Caso comma " + c);
-                                break;
-                            case '\n':
-                                System.out.print("Caso salto de línea " );
-                                System.out.println(". Linea " + lineas);
-                                break;
-                            case ';':
-                                System.out.println("Caso ';' " + c);
-                                break;
-                            default:
-                                System.out.println("Otra cosa: " + c);
-                        }
+                    System.out.println("Volver a imprimir lista de adyacencias");
+                    for(int i=0; i<12; i++){
+                        for( j=0; j<12; j++)
+                            System.out.print(adyacencias[i][j] + ", ");
+                        System.out.println("");
+                    }  
                 }
                 
             }
@@ -231,6 +243,7 @@ public class Archivos {
             System.out.println("Recorrido por la izquierda");
             System.out.println(listaNodos.recorridoAnchuraIzquierda());
             System.out.println(s);
+            
         
         
         return listaNodos;
