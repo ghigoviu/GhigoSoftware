@@ -1,20 +1,18 @@
-package com.upemor.arbolbinario;
-
-import lombok.Getter;
-import lombok.Setter;
+package arbolesbinarios;
 
 /** @author cerimice **/
 
-@Getter
-@Setter
 public class Nodo{
     
-    private long id;
-    
+    private int id;
+    private int tipo;
     private String nombre;
     
     private Nodo izquierdo;
     private Nodo derecho;
+    
+    private int caminoDerecho;
+    private int caminoIzquierdo;
     
     public Nodo(){
         id = 0;
@@ -23,7 +21,7 @@ public class Nodo{
         derecho = null;
     }
     
-    public Nodo(long id,String nombre){
+    public Nodo(int id,String nombre){
         this.id = id;
         this.nombre = nombre;
         izquierdo = null;
@@ -32,7 +30,69 @@ public class Nodo{
     
     @Override
     public String toString(){
-        return "("+id+")";
+        return ("ID: " + this.id  + " nombre: " + this.nombre + " tipo: " 
+                + this.tipo);
     }
+
+    public int getCaminoDerecho() {
+        return caminoDerecho;
+    }
+
+    public void setCaminoDerecho(int caminoDerecho) {
+        this.caminoDerecho = caminoDerecho;
+    }
+
+    public int getCaminoIzquierdo() {
+        return caminoIzquierdo;
+    }
+
+    public void setCaminoIzquierdo(int caminoIzquierdo) {
+        this.caminoIzquierdo = caminoIzquierdo;
+    }
+
+    
+    
+    public long getId() {
+        return id;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Nodo getIzquierdo() {
+        return izquierdo;
+    }
+
+    public Nodo getDerecho() {
+        return derecho;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setIzquierdo(Nodo izquierdo) {
+        this.izquierdo = izquierdo;
+    }
+
+    public void setDerecho(Nodo derecho) {
+        this.derecho = derecho;
+    }
+    
+    
     
 }

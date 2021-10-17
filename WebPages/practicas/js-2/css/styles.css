@@ -1,0 +1,87 @@
+body{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ background: #e5e5e5;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+.header{
+  background: rgb(36, 16, 2);
+  padding: 0.5rem;
+
+}
+
+.main{
+  /*background-color: rgb(218,215,218);*/
+  max-width: 700px;
+  width: 100%;
+  max-height: 500px;
+  margin: auto;
+  padding: 40px;
+  margin-top: 1rem;
+
+}
+
+.footer{
+  background: rgb(19,54,153);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.formulario{
+  width: 80%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.form_container{
+  width: 100%;
+  background: rgb(202,199,199);
+  border-radius: 10rem;
+  padding: 0.5rem;
+}
+
+.form_input{
+  cursor: text;
+  background: rgb(245, 240, 240);
+  border: 6px transparent;
+  border-radius: 30px;
+}
+
+.form_input:focus{
+  border 3px solid #fd0303;
+  outline: none;
+  box-shadow: 3px 0px 30px rgb(8,8,8);
+}
+
+.form_com{
+  cursor: text;
+  width: 100%;
+  background: rgb(245,240,240);
+  border: 6px transparent;
+  border-radius: 30px;
+}
+
+.form_com:focus{
+  border 3px solid #fd0303;
+  outline: none;
+  box-shadow: 3px 0px 30px rgb(8,8,8);
+}
+
+.form_label{
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.form_btn{
+  height: 30px;
+  width: 100%
+  background: rgb(8,8,8);
+  color: #e5e5e5;
+  cursor: pointer;
+  
+}

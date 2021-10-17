@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>VALIDACIONES</title>
+</head>
+<body>
+    <header class="header"><h1>Formulario de registro</h1></header>
+<main class="main">
+<div class="formulario">
+ <form method="POST" action="php/alta.php" name="frm1">
+  <div class="form_container">
+   <label for="txtnombre" class="form_label">Nombre:</label>
+   <input type="txt" name="txtnombre" id="txtnombre" class="form_input">
+  </div>
+  <div>
+   <label for="txtapp" class="form_label">Apellidos:</label>
+       <input type="txt" name="txtapp" id="txtapp" class="form_input">
+  </div>
+  <div class="form_container">
+   <label for="txtedad" class="form_label">Edad:</label>
+       <input type="txt" name="txtedad" id="txtedad" class="form_input"
+        onkeyPress="if(event.keyCode < 48 || event.keyCode > 57){
+            event.returnValue=false;
+         }">
+ </div>
+  <div class="form_container">
+   <label for="txtcomentarios">Comentarios:</label>
+       <textarea name="txtcomentarios" id="txtcomentarios" class="form_com"></textarea>
+  </div>
+  <div class="form_container">
+       <input type="button" value="Enviar" class="form_btn" onclick="valida_envio()">
+  </div>
+ </form>
+</div>
+</main>
+<footer class="footer"><h6>Derechos Reservados@</h6>  </footer>
+<script type="text/javascript" src="js/validaciones.js">
+
+</script>
+</body>
+</html>

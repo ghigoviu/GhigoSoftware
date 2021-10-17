@@ -1,4 +1,4 @@
-package com.upemor.arbolbinario;
+package arbolesbinarios;
 
 /** @author cerimice **/
 public class Main{

@@ -1,21 +1,19 @@
 package arbolesbinarios;
 
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
-/** @author cerimice **/
 public class ArbolBinario{
-
-    public Nodo getRaiz() {
-        return raiz;
-    }
-
-    public void setRaiz(Nodo raiz) {
-        this.raiz = raiz;
-    }
-    
+    //Atributos
     private Nodo raiz;
+    private int numNodos;
+
+    public int getNumNodos() {
+        return numNodos;
+    }
+
+    public void setNumNodos(int numNodos) {
+        this.numNodos = numNodos;
+    }
     
     public ArbolBinario(){
         raiz = null;
@@ -23,6 +21,13 @@ public class ArbolBinario{
     
     public ArbolBinario(Nodo nodo){
         raiz = nodo;
+    }
+    public Nodo getRaiz() {     
+        return raiz;
+    }
+
+    public void setRaiz(Nodo raiz) {
+        this.raiz = raiz;
     }
     
     /* Operaciones */
@@ -65,7 +70,10 @@ public class ArbolBinario{
     /* Recorrido */
     public String recorridoAnchuraIzquierda(){
         String recorrido = "Inicio -> ";
-        PriorityQueue<Nodo> cola = new LinkedList<>();
+        //PriorityQueue<Nodo> cola = new LinkedList<>();
+        //LinkedList<Nodo> cola = new LinkedList<>();
+        //PriorityQueue<Nodo> cola = new PriorityQueue<Nodo>();
+        Queue<Nodo> cola = new LinkedList<>();
             cola.add(raiz);
         Nodo actual;
         while(!cola.isEmpty()){
@@ -79,7 +87,9 @@ public class ArbolBinario{
     
     public String recorridoAnchuraDerecha(){
         String recorrido = "Inicio -> ";
-        Queue<Nodo> cola = new LinkedList<Nodo>();
+        //PriorityQueue<Nodo> cola = new PriorityQueue<Nodo>();
+        //LinkedList<Nodo> cola = new LinkedList<>();
+        Queue<Nodo> cola = new LinkedList<>();
             cola.add(raiz);
         Nodo actual;
         while(!cola.isEmpty()){
@@ -125,5 +135,9 @@ public class ArbolBinario{
         recorridoProfundidadPostorden(nodo.getIzquierdo());
         recorridoProfundidadPostorden(nodo.getDerecho());
         System.out.print(nodo+" -> ");
+    }
+
+    int size() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

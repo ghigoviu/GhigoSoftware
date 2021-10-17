@@ -1,0 +1,29 @@
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: cornsilk;
+}
+
+h1, h6{
+  text-align: center;
+}
+
+.header{
+  background: rgba(10, 136, 27, 0.4);
+  padding: 0.5rem;
+}
+
+.main{
+  background-color: rgb(218,215,218);
+  max-width: 500px;
+  max-height: 500px;
+  margin: auto;
+  padding: 80px;
+  margin-top: 1rem;
+
+}
+
+.footer{
+  background: rgb(19,54,153);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}

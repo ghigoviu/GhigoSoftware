@@ -30,15 +30,7 @@ class Cadena{
         
     boolean validarNumero(){
         
-        if (dato.length() > 4) {
-            if (true) {
-                
-            } else {
-                
-            }
-        } else {
-            return true;
-        }
+       return true;
     }
     
     boolean validarPatronA(){
