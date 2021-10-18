@@ -136,11 +136,11 @@ public class Archivos {
         nuevo.close();
     }
     
-    static ArbolBinario readFileTxt(String ruta) throws IOException{
+    static GrafoPonderado readFileTxt(String ruta) throws IOException{
         ruta = "C:\\Users\\Vrick\\Downloads\\redEjemplo01.graph";
         String s = "";
         readFileTxt();
-        ArbolBinario listaNodos;
+        ArrayList<Nodo> listaNodos;
         int c;
         int numNodos = 0;
         int lineas = 0;
@@ -148,7 +148,7 @@ public class Archivos {
         String numero;
         char digito;
         try (PushbackReader nuevo = new PushbackReader(new FileReader(ruta))) {
-            listaNodos = new ArbolBinario();
+            listaNodos = new ArrayList<Nodo>();
             while((c = nuevo.read()) != -1){
                 //Leer la primera línea con los los elementos, contar y obtener nodos.
                 if(c == '('){
@@ -172,7 +172,7 @@ public class Archivos {
                     //char type = (char)nuevo.read();
                     int type = nuevo.read();
                     nodo.setTipo(type-48);
-                    listaNodos.insertar(nodo);
+                    listaNodos.add(nodo);
                     numNodos++;
                 }
                 else if(c == ';'){
@@ -192,61 +192,43 @@ public class Archivos {
                                 //Leer numero
                                 numero = "";
                                 while(c > 44){
-                                    //System.out.print("" + (c-48));
                                     digito = (char)c;
                                     numero += Character.toString(digito);
                                     c = nuevo.read();
                                 }
-                                System.out.print(numero + " ");
                                 adyacencias[i][j++] = numero;
-                                System.out.print(", ");
                             } else if(c == -1)
                                 break;
                         }while((c!=10));
-                        System.out.println("Sig línea: " + ++lineas + " " + i);       
-                    }   
-                    switch (c) {
-                        case '0':
-                            System.out.println("Caso 0: " + c);
-                            break;
-                        case 49:
-                        case '9':
-                            System.out.println("Caso del 1 al nueve: " + c);
-                            break;
-                        case ',':
-                            System.out.println("Caso comma " + c);
-                            break;
-                        case '\n':
-                            System.out.print("Caso salto de línea " );
-                            System.out.println(". Linea " + lineas);
-                            break;
-                        case ';':
-                            System.out.println("Caso ';' " + c);
-                            break;
-                        default:
-                            System.out.println("Otra cosa: " + c);
                     }
-                    System.out.println("Volver a imprimir lista de adyacencias");
+                    System.out.println("Lista de adyacencias");
                     for(int i=0; i<12; i++){
                         for( j=0; j<12; j++)
                             System.out.print(adyacencias[i][j] + ", ");
                         System.out.println("");
-                    }  
+                    }
+                    GrafoPonderado grafo = new GrafoPonderado(numNodos);
+                    grafo.setListaNodos(listaNodos);
+                    grafo.setListaAdyacencia(adyacencias);
+                    return grafo;
                 }
-                
             }
         }
             System.out.println("Hay " + numNodos + " nodos en total");
+            System.out.println("Lista de nodos");
+            for(Nodo elemento:listaNodos){
+                System.out.println(elemento.toString());
+            }
+            
+            /*
             listaNodos.setNumNodos(numNodos);
             System.out.println("Recorrido por la derecha");
             System.out.println(listaNodos.recorridoAnchuraDerecha());
             System.out.println("Recorrido por la izquierda");
             System.out.println(listaNodos.recorridoAnchuraIzquierda());
             System.out.println(s);
-            
-        
-        
-        return listaNodos;
+            */
+        return null;
     }
     
 }
