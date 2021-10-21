@@ -1,5 +1,7 @@
 package arbolesbinarios;
 
+import java.util.Scanner;
+
 /**
  *
  * @author 
@@ -12,11 +14,41 @@ public class ArbolesBinarios {
     public static void main(String[] args) {
         //TODO    
         //prueba();
-        System.out.println("Prueba de FileReader");
+        //System.out.println("Prueba de FileReader");
+        GrafoPonderado grafo;
+        ArbolBinario arbol;
+        String ruta = "";
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese la ruta completa del archivo");
+        ruta = "C:\\Users\\Vrick\\Downloads\\red02.graph";
+        //ruta = entrada.nextLine();
+        
         try {
-            Archivos.readFileTxt("");
+            grafo = Archivos.readFileTxt(ruta);  
+            System.out.println("Total de nodos");
+            System.out.println(grafo.getNumNodos());
+            grafo.mostrarNoodosPorTipo();
+            /*
+            System.out.println("\nLista de adyacencias");
+            for (Adyacencia adyacencia : grafo.getListaAdyacencia()) {
+                System.out.println(adyacencia);
+            }
+            */
+            //Generar arboles
+            arbol = new ArbolBinario(grafo.getListaNodos(), grafo.getListaAdyacencia());
+            arbol.setNumNodos(grafo.getNumNodos());
+            arbol.setMatrizAdyacencia(grafo.getMatrizAdyacencia());
+            System.out.println("Ingrese la raiz del nuevo arbol generado");
+            int raiz = 4;
+            raiz = entrada.nextInt() - 1;
+            arbol.dijkstra(grafo.getMatrizAdyacencia(), raiz);
+            
+            arbol.generarArbol(grafo.getListaNodos().get(raiz));
+            
+            
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Archivo main: " + e);
+            e.printStackTrace();
         }
     }
     

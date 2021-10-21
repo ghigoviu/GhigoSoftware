@@ -127,7 +127,7 @@ public class Archivos {
     }
     
     static void readFileTxt() throws IOException{
-        String ruta = "C:\\Users\\Vrick\\Downloads\\redEjemplo01.graph";
+        String ruta = "C:\\Users\\Vrick\\Downloads\\red02.graph";
         FileReader nuevo = new FileReader(ruta);
         BufferedReader br = new BufferedReader(nuevo);
         String s;
@@ -137,9 +137,7 @@ public class Archivos {
     }
     
     static GrafoPonderado readFileTxt(String ruta) throws IOException{
-        ruta = "C:\\Users\\Vrick\\Downloads\\redEjemplo01.graph";
-        String s = "";
-        readFileTxt();
+        //readFileTxt();
         ArrayList<Nodo> listaNodos;
         int c;
         int numNodos = 0;
@@ -201,15 +199,18 @@ public class Archivos {
                                 break;
                         }while((c!=10));
                     }
+                    /*
                     System.out.println("Lista de adyacencias");
-                    for(int i=0; i<12; i++){
-                        for( j=0; j<12; j++)
+                    for(int i=0; i<numNodos; i++){
+                        for( j=0; j<numNodos; j++)
                             System.out.print(adyacencias[i][j] + ", ");
                         System.out.println("");
                     }
+                    */
                     GrafoPonderado grafo = new GrafoPonderado(numNodos);
                     grafo.setListaNodos(listaNodos);
-                    grafo.setListaAdyacencia(adyacencias);
+                    grafo.setMatrizAdyacencia(adyacencias);
+                    
                     return grafo;
                 }
             }

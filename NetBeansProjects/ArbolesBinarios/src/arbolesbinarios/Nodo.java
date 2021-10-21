@@ -31,7 +31,7 @@ public class Nodo{
     @Override
     public String toString(){
         return ("ID: " + this.id  + " nombre: " + this.nombre + " tipo: " 
-                + this.tipo);
+                + this.tipo + "\t");
     }
 
     public int getCaminoDerecho() {
@@ -49,8 +49,6 @@ public class Nodo{
     public void setCaminoIzquierdo(int caminoIzquierdo) {
         this.caminoIzquierdo = caminoIzquierdo;
     }
-
-    
     
     public long getId() {
         return id;
