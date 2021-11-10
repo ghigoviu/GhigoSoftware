@@ -44,9 +44,9 @@ class Cadena{
     }
     
     void recorridoRecursivo(int i, int array[]) throws NullPointerException{
-            System.out.print(array[i] + ", ");
-            this.recorridoRecursivo(++i, array);
-            //System.out.println("\nFin del array");
+        System.out.print(array[i] + ", ");
+        this.recorridoRecursivo(++i, array);
+        //System.out.println("\nFin del array");
     }
     
     
